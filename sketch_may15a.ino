@@ -180,10 +180,12 @@ void getStickBoundries(int start){
   shackleUp();
   delay(1000);
   spinTo(start + 3, 0, CCW);
+  delay(500);
   hb = readEncoderDigit();
   Serial.print("hb = ");
   Serial.println(hb);
   spinTo(start - 3, 0, CW);
+  delay(500);
   lb = readEncoderDigit();
   Serial.print("lb = ");
   Serial.println(lb);
@@ -222,9 +224,13 @@ void dialCombos(){
 int findResistance(){
   spinTo(0, 3, CW);
   delay(1000);
-  shackle.write(maxi + (0.37*FB_DELTA*(FB_TOLERANCE-1)));
+  Serial.println("DONE 3");
+  shackle.write(maxi + (0.35*FB_DELTA*(FB_TOLERANCE-1)));
   spinTo(0, 1, CW);
-  return (int)(readEncoderDigit());
+  int ret = (int)(round(readEncoderDigit()));
+  delay(1000);
+  shackleMid();
+  return ret;
 }
 
 /*void findCombos(){
