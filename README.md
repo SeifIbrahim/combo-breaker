@@ -3,6 +3,8 @@ A robot designed to open and output the combination of a Master Lock Combination
 
 ## The Robot in Action
 ![](https://media.giphy.com/media/e7QoY3BVq0r0pmnSlf/giphy.gif)
+
+The combination lock cracker starts by calibrating the servo motor to the right height. It then starts to test various sticking points on the lock by lifting up the shackle, spinning side to side and recording how far it got. It uses this information to make a list of possible combinations. It tries them one after the other until one of them succeeds and opens the lock.
 ## Materials
 1. 3D printed chassis to hold the lock and motors and a 3D printed grip to connect the stepper motor to the lock's dial. (Printed on school-provided 3D printer) 
 2. Stepper Motor for precise dial control 
